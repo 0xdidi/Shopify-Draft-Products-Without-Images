@@ -48,7 +48,7 @@ If you want to run the script locally:
    ```
    SHOPIFY_SHOP_NAME=your-store.myshopify.com
    SHOPIFY_API_KEY=your_api_key
-   SHOPIFY_API_PASSWORD=your_api_password
+   SHOPIFY_ADMIN_API_TOKEN=your_admin_api_token
    ```
 3. Install dependencies: `npm install`
 4. Run the script: `npm start`
