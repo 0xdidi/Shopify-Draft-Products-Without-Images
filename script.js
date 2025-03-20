@@ -6,8 +6,8 @@ const Shopify = require('shopify-api-node');
 const shopify = new Shopify({
   shopName: process.env.SHOPIFY_SHOP_NAME,
   apiKey: process.env.SHOPIFY_API_KEY,
-  password: process.env.SHOPIFY_API_PASSWORD,
-  apiVersion: '2023-10' // Update this to the latest API version
+  password: process.env.SHOPIFY_ADMIN_API_TOKEN, // This is your Admin API access token
+  apiVersion: '2025-01' // Updated to the current version
 });
 
 // Function to check if a product has any images
