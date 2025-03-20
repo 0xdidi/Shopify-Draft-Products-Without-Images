@@ -1,0 +1,40 @@
+# .github/workflows/shopify-draft-products.yml
+name: Set Shopify Products Without Images to Draft
+
+on:
+  schedule:
+    # Runs at 02:00 UTC every day
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    # Allows manual triggering of the workflow
+
+jobs:
+  check-and-draft-products:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          
+      - name: Install dependencies
+        run: |
+          npm install shopify-api-node dotenv
+      
+      - name: Create .env file
+        run: |
+          echo "SHOPIFY_SHOP_NAME=${{ secrets.SHOPIFY_SHOP_NAME }}" > .env
+          echo "SHOPIFY_API_KEY=${{ secrets.SHOPIFY_API_KEY }}" >> .env
+          echo "SHOPIFY_API_PASSWORD=${{ secrets.SHOPIFY_API_PASSWORD }}" >> .env
+      
+      - name: Run Shopify product script
+        run: node script.js
+      
+      - name: Log result
+        if: always()
+        run: |
+          echo "Script execution completed at $(date)"
