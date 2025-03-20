@@ -1,0 +1,16 @@
+{
+  "name": "shopify-draft-products",
+  "version": "1.0.0",
+  "description": "Sets Shopify products without images to draft status",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "shopify-api-node": "^3.12.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
