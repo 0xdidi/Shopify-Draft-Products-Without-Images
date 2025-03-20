@@ -30,7 +30,7 @@ Add the following secrets to your GitHub repository:
 
 1. `SHOPIFY_SHOP_NAME`: Your shop name (example: your-store.myshopify.com)
 2. `SHOPIFY_API_KEY`: The API key from your Shopify app
-3. `SHOPIFY_API_PASSWORD`: The API password (or access token) from your Shopify app
+3. `SHOPIFY_ADMIN_API_TOKEN`: The admin access token from your Shopify app
 
 ### 3. Deploy to GitHub
 
